@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 
+//importing components
+import Header from './components/Header';
+import Pageone from './components/Pageone';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload..
-        </p>
-      </header>
+      <Header />
+      <div id="pageOne">
+        <Pageone />
+      </div>
     </div>
   );
 }
