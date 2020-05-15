@@ -56,3 +56,14 @@ header {
 .forInput {
   width: 165px;
 }
+
+#changeText {
+  border: none;
+  font-size: 1.5rem;
+  background-color: inherit;
+}
+
+#changeText:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

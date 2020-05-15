@@ -4,6 +4,7 @@ class Pageone extends Component {
     render() {
         return (
             <div>
+
                 <h2 className="title">Enter Amount</h2>
 
                 <div className="bigBox">
@@ -18,10 +19,18 @@ class Pageone extends Component {
 
                 <div className="bigBox">
                     <div className="smallBox">
+                        <span className="label">Details: </span>
+                        <input className="forInput" type="text" />
+                    </div>
+                </div>
+
+                <div className="bigBox">
+                    <div className="smallBox">
                         <span className="label">Amount: </span>
                         <input className="forInput" type="number" />
                     </div>
                 </div>
+
             </div>
         )
     }
