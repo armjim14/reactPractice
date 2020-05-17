@@ -1,18 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class Header extends Component {
     render() {
         return (
             <header>
-               <div onClick={this.props.changePage.bind(this, 1)} className="button border-right">
+               <Link to="/" className="button border-right forLink">
                     One
-               </div>
-               <div onClick={this.props.changePage.bind(this, 2)} className="button border-right">
+               </Link>
+               <Link to="/view" className="button border-right forLink">
                     Two
-               </div>
-               <div onClick={this.props.changePage.bind(this, 3)} className="button none-border-right">
+               </Link>
+               <Link to="/settings" className="button none-border-right forLink">
                     Three
-               </div>
+               </Link>
                <hr className="longLine" />
             </header>
         )
