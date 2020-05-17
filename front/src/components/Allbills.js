@@ -1,14 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from "react-router-dom";
 
-export default class Allcat extends Component {
+export default class Allbills extends Component {
 
     state = {
         names: []
     }
 
     componentDidMount() {
-        this.setState({names: this.props.cat}, () => {
+        console.log(this.props)
+        this.setState({names: this.props.bills}, () => {
+            console.log(this.state)
             this.sectionNames()
         })
     }
@@ -17,9 +19,9 @@ export default class Allcat extends Component {
         return (
             <Fragment>
                 { this.state.names.map(item => { 
-                    return <div key={item.CatID} className="bigBox">
+                    return <div key={item.BillID} className="bigBox">
                         <div className="smallBox">
-                            <Link to={`/cat/${item.CatID}`} className="cen forLink addH">{item.sectionName}</Link>
+                            <Link to={`/bill/${item.BillID}`} className="cen forLink addH">{item.billName}</Link>
                         </div>
                     </div>
                 }) }
@@ -30,10 +32,10 @@ export default class Allcat extends Component {
     render() {
         return (
             <div>
-                <h2 className="title">Categories</h2>
+                <h2 className="title">Bills</h2>
                 <div className="bigBox">
                     <div className="smallBox">
-                        <Link style={{color: '#488a00'}} to={`/add/cat`} className="cen forLink addH">Add new Category</Link>
+                        <Link style={{color: '#488a00'}} to={`/add/bill`} className="cen forLink addH">Add new Bill</Link>
                     </div>
                 </div>
                 <hr className="smallLine" />

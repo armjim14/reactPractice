@@ -8,8 +8,14 @@ import Header from './components/Header';
 import Pageone from './components/Pageone';
 import Pagetwo from './components/Pagetwo';
 import Pagethree from './components/Pagethree';
+
 import Allcat from './components/Allcat';
 import Editcat from './components/Editcat';
+import Addcat from './components/Addcat';
+
+import Allbills from './components/Allbills';
+import Editbill from './components/Editbill';
+import Addbill from './components/Addbill';
 
 class App extends Component{
 
@@ -45,6 +51,10 @@ class App extends Component{
             <Route exact path="/settings" component={Pagethree} />
             <Route exact path="/categories" component={() => <Allcat cat={this.state.cat} />} />
             <Route exact path="/cat/:id" component={() => <Editcat cat={this.state.cat} />} />
+            <Route exact path="/add/cat" component={Addcat} />
+            <Route exact path="/bills" component={() => <Allbills bills={this.state.bills} />} />
+            <Route exact path="/bill/:id" component={() => <Editbill bills={this.state.bills} />} />
+            <Route exact path="/add/bill" component={Addbill} />
           </Switch>
         </Router>
       </div>

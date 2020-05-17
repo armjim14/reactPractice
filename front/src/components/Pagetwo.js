@@ -39,13 +39,15 @@ class Pagetwo extends Component {
         let title = num === 1 ? 'Bills' : 'Transactions';
 
         let forTd = arr.map( (item, i) => {
-            let name = num === 1 ? item.billName : item.transName;
+            let name = num === 1 ? item.billName : item.notes;
             let date = num === 1 ? item.dueDate : item.theDate;
+
+            let realDate = date.split("T")[0].split("-")
 
             return (
                 <tr key={i}>
                     <td>{name}</td>
-                    <td>{date}</td>
+                    <td>{`${realDate[1]}-${realDate[2]}-${realDate[0]}`}</td>
                     <td>{item.amount}</td>
                 </tr>
             )
