@@ -63,6 +63,19 @@ export default class Editcat extends Component {
         }
     }
 
+    unactivate = id => {
+        console.log(id)
+        axios.put("/del/cat", {id})
+        .then(async res => {
+            if (res.data.updated){
+                await this.props.runData();
+                window.location.href = "/categories";
+            } else {
+                alert("error")
+            }
+        })
+    }
+
     render() {
         return (
             <Fragment>
@@ -73,7 +86,7 @@ export default class Editcat extends Component {
                 </div>
                 <div className="bigBox mt-25">
                     <div className="smallBox">
-                        <button>Delete</button>
+                        <button onClick={this.unactivate.bind(this, this.state.num)}>Unactivate</button>
                     </div>
                 </div>
             </Fragment>

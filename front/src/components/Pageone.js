@@ -18,7 +18,6 @@ class Pageone extends Component {
         var yyyy = today.getFullYear();
 
         today = yyyy + '-' + mm + '-' + dd
-        console.log(today)
         if ( this.props.list[0] ){
             this.setState({list: this.props.list, amount: this.state.amount, details: this.state.details, value: this.props.list[0].CatID.toString(), date: today})
         } else {
@@ -40,7 +39,7 @@ class Pageone extends Component {
         axios.post(`/add/trans`, this.state)
         .then( res => {
             if (res.data.added){
-                window.location.href = "/bills"
+                window.location.href = "/view"
             } else {
                 alert('error')
             }
@@ -84,7 +83,7 @@ class Pageone extends Component {
 
                 <div className="bigBox">
                     <div className="smallBox">
-                        <span className="label">Amount: </span>
+                        <span className="label">Date: </span>
                         <input name="date" value={this.state.date} onChange={this.updateInput} className="forInput" type="date" />
                     </div>
                 </div>

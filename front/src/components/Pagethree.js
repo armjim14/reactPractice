@@ -18,7 +18,13 @@ class Pagethree extends Component {
                     </div>
                     <div className="bigBox">
                         <div className="smallBox">
-                            <Link to="/categories" className="forLink cen mt-0 addH">Transactions</Link>
+                            <Link to="/trans" className="forLink cen mt-0 addH">Transactions</Link>
+                        </div>
+                    </div>
+                    <hr className="smallLine" />
+                    <div className="bigBox">
+                        <div className="smallBox">
+                            <Link to="/restore" className="forLink cen mt-0 addH">Recycle bin</Link>
                         </div>
                     </div>
             </div>
